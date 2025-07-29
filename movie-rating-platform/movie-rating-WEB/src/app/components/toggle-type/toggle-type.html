@@ -1,0 +1,14 @@
+<div class="toggle-container">
+  <button
+    [class.active]="selected === 0"
+    (click)="selectToggle(0)"
+  >
+    Movies
+  </button>
+  <button
+    [class.active]="selected === 1"
+    (click)="selectToggle(1)"
+  >
+    TV Shows
+  </button>
+</div>
