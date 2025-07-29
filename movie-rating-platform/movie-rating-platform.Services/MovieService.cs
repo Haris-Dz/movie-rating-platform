@@ -21,6 +21,11 @@ namespace movie_rating_platform.Services
         }
         public override IQueryable<Movie> AddFilter(MovieSearchRequest searchObject, IQueryable<Movie> query)
         {
+            if (!string.IsNullOrWhiteSpace(searchObject.SearchKeyWord))
+            {
+                query = query.Where(x => x.Title.ToLower().Contains(searchObject.SearchKeyWord));
+            }
+
             if (searchObject.MovieTypeSearch.HasValue)
             {
                 query = query.Where(x=>x.MovieType == searchObject.MovieTypeSearch);

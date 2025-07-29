@@ -1,0 +1,64 @@
+<div class="top-bar">
+  <toggle-type (toggleChange)="onToggleChange($event)"></toggle-type>
+  <search-bar (search)="onSearch($event)"></search-bar>
+
+</div>
+
+<div *ngIf="!loading" class="movies-grid">
+  <div class="movie-card" *ngFor="let movie of movies; let mi = index">
+    <div class="movie-header">
+      <h3>{{ movie.title }} ({{ movie.releaseDate | date: 'yyyy' }})</h3>
+      <div class="stars-rating">
+        <span class="star" *ngFor="let star of [1,2,3,4,5]; let i = index">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <defs>
+              <linearGradient [attr.id]="'grad' + mi + '-' + i" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop [attr.offset]="getStarFill(movie.averageRating, star) + '%'" stop-color="#ffd700" />
+                <stop [attr.offset]="getStarFill(movie.averageRating, star) + '%'" stop-color="#e0e0e0" />
+              </linearGradient>
+            </defs>
+            <path
+              [attr.fill]="'url(#grad' + mi + '-' + i + ')'"
+              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2
+                 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+            />
+          </svg>
+        </span>
+        <p class="rating-number">{{ movie.averageRating }}</p>
+      </div>
+    </div>
+
+    <div class="movie-content">
+      <img
+        [src]="'http://localhost:5127' + movie.coverImage"
+        alt="{{ movie.title }}"
+        class="movie-image"
+      />
+      <div class="movie-cast">
+        <strong>Cast:</strong>
+        <span *ngFor="let actor of movie.actors; let last = last">
+          {{ actor.firstName }} {{ actor.lastName }}<span *ngIf="!last">, </span>
+        </span>
+      </div>
+
+      <div class="movie-text">
+        <p class="movie-description">{{ movie.shortDescription }}</p>
+        <button class="leave-rating-btn">Leave Rating</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pagination-controls" *ngIf="!loading">
+  <button class="show-less" *ngIf="pageSize > 10" (click)="showLess()">Show Less</button>
+  <button class="show-more" *ngIf="movies.length < totalCount" (click)="showMore()">Show More</button>
+</div>
+
+

@@ -27,7 +27,6 @@ namespace movie_rating_platform.Services.BaseServices
         public PagedResult<TModel> GetPaged(TSearch search)
         {
             List<TModel> result = new List<TModel>();
-
             var query = Context.Set<TDbEntity>().AsQueryable();
             query = AddFilter(search, query);
 
@@ -37,10 +36,18 @@ namespace movie_rating_platform.Services.BaseServices
             {
                 query = ApplySorting(query, search.OrderBy, search.SortDirection);
             }
-
+            else
+            {
+                query = query.OrderBy(e => EF.Property<object>(e, "MovieId"));
+            }
+            if (search?.Page.HasValue == true && search?.PageSize.HasValue == true)
+            {
+                int skip = (search.Page.Value - 1) * search.PageSize.Value;
+                query = query.Skip(skip).Take(search.PageSize.Value);
+            }
             var list = query.ToList();
+            result = Mapper.Map<List<TModel>>(list);
 
-            result = Mapper.Map(list, result);
             CustomMapPagedResponse(result);
 
             PagedResult<TModel> pagedResult = new PagedResult<TModel>();
