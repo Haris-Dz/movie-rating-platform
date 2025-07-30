@@ -444,3 +444,5 @@ app.*.map.json
 *.env
 
 set-model.zip
+!dist/
+!dist/**
