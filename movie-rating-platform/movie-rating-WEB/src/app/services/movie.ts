@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 export interface Actor {
   actorId: number;
@@ -38,7 +39,7 @@ export interface MovieApiResponse {
   providedIn: 'root'
 })
 export class MoviesService {
-  private baseUrl = 'http://localhost:5127/api/Movie';
+  private baseUrl = `${environment.apiBaseUrl}/api/Movie`;
 
   constructor(private http: HttpClient) {}
 
@@ -60,9 +61,6 @@ export class MoviesService {
 
     if (searchKeyword && searchKeyword.trim().length >= 2) {
       params.set('SearchKeyWord', searchKeyword.trim());
-      // Opcionalno možeš override-ati paging ako želiš:
-      // params.set('Page', '1');
-      // params.set('PageSize', '100');
     }
 
     const url = `${this.baseUrl}?${params.toString()}`;

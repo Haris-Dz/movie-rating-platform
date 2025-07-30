@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: movierating-sql
+    restart: unless-stopped
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=${SA_PASSWORD}
+      - MSSQL_PID=Developer
+    ports:
+      - 1433:1433
+    volumes:
+      - movierating-sql-data:/var/opt/mssql
+    networks:
+      - movierating-net
+
+  movierating-api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: movierating-api
+    restart: unless-stopped
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Server=sqlserver,1433;Database=MovieRatingDB;User Id=sa;Password=H4r4PwXsoft2025!;TrustServerCertificate=True;
+    ports:
+      - 5200:5200
+    depends_on:
+      - sqlserver
+    volumes:
+      - ./movie-rating-platform.API/wwwroot/images:/app/wwwroot/images
+    networks:
+      - movierating-net
+
+  movierating-frontend:
+    build:
+      context: ./movie-rating-WEB
+      dockerfile: Dockerfile.frontend
+    container_name: movierating-frontend
+    restart: unless-stopped
+    ports:
+      - 4200:80
+    depends_on:
+      - movierating-api
+    networks:
+      - movierating-net
+
+
+volumes:
+  movierating-sql-data:
+
+networks:
+  movierating-net:
+    driver: bridge
