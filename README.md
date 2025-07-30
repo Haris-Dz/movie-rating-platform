@@ -2,14 +2,14 @@
 Minimalist movie and TV show rating platform built with ASP.NET Core and Angular.
 
 # Upute za pokretanje
-- **Otvorite repozitorij movie-rating-platform**
+- **Otvoriti repozitorij movie-rating-platform**
 - **Pronaći arhivu pod nazivom Env_file30072025**
 - **Extract .env file iz arhive u isti trenutni folder**
 - **.env file bi se trebao nalaziti u folderu movie-rating-platform\movie-rating-platform**
 - **Unutar movie-rating-platform\movie-rating-platform, otvoriti terminal i pokrenuti komandu `docker compose up --build` te sačekati da se svi servisi uspješno buildaju**
 
 ## Pokretanje aplikacije
-- **Nakon builda, aplikaciji pristupi na: http://localhost:4200**
+- **Nakon builda, aplikaciji pristupiti na: http://localhost:4200**
 
 
 # Korištene tehnologije
