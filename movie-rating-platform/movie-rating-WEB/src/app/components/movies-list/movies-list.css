@@ -159,7 +159,7 @@ search-bar, toggle-type {
 .pagination-controls button {
   background: transparent;
   border: none;
-  color: #1a73e8; /* Google plava, fina i svježa */
+  color: #1a73e8; 
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
@@ -173,7 +173,7 @@ search-bar, toggle-type {
 
 .pagination-controls button:hover {
   background-color: rgba(26, 115, 232, 0.1);
-  color: #174ea6; /* tamnija plava na hover */
+  color: #174ea6; 
 }
 
 .pagination-controls button:focus {
@@ -201,18 +201,48 @@ search-bar, toggle-type {
   transition: transform 0.3s ease;
 }
 
-/* Strelica prema dole za Show More */
 .pagination-controls button.show-more::after {
   border-top: 8px solid #1a73e8;
 }
 
-/* Strelica prema gore za Show Less */
 .pagination-controls button.show-less::after {
   border-bottom: 8px solid #1a73e8;
 }
+.error-message {
+  position: fixed;
+  top: 110px; /* malo ispod success */
+  right: 20px;
+  background-color: #f44336; /* crvena */
+  color: white;
+  padding: 10px 18px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  font-weight: 600;
+  z-index: 1000;
+  animation: fadeinout 3.5s forwards;
+}
+
+.success-message {
+  position: fixed;
+  top: 70px; /* ispod top-bar */
+  right: 20px;
+  background-color: #4caf50; /* lijepa zelena */
+  color: white;
+  padding: 10px 18px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  font-weight: 600;
+  z-index: 1000;
+  animation: fadeinout 3.5s forwards;
+}
+
+@keyframes fadeinout {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10%, 90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
 
 
-/* Responsive grid layout */
 @media (max-width: 900px) {
   .movies-grid {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));

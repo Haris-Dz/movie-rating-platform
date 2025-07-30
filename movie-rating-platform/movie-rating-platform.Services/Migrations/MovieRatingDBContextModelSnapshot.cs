@@ -179,331 +179,331 @@ namespace movie_rating_platform.Services.Migrations
                         {
                             MovieId = 1,
                             AverageRating = 4.0,
-                            CoverImage = "/images/movie.jpg",
+                            CoverImage = "/images/movie1.jpg",
                             IsDeleted = false,
                             MovieType = 0,
-                            ReleaseDate = new DateTime(2001, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 1",
-                            Title = "Movie 1"
+                            ReleaseDate = new DateTime(1994, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "Hope is a dangerous thing.",
+                            Title = "The Shawshank Redemption"
                         },
                         new
                         {
                             MovieId = 2,
                             AverageRating = 3.5,
-                            CoverImage = "/images/movie.jpg",
+                            CoverImage = "/images/movie2.jpg",
                             IsDeleted = false,
                             MovieType = 0,
-                            ReleaseDate = new DateTime(2002, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 2",
-                            Title = "Movie 2"
+                            ReleaseDate = new DateTime(1972, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "An offer you can't refuse.",
+                            Title = "The Godfather"
                         },
                         new
                         {
                             MovieId = 3,
                             AverageRating = 4.5,
-                            CoverImage = "/images/movie.jpg",
+                            CoverImage = "/images/movie3.jpg",
                             IsDeleted = false,
                             MovieType = 0,
-                            ReleaseDate = new DateTime(2003, 3, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 3",
-                            Title = "Movie 3"
+                            ReleaseDate = new DateTime(2008, 7, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "Why so serious?",
+                            Title = "The Dark Knight"
                         },
                         new
                         {
                             MovieId = 4,
                             AverageRating = 2.5,
-                            CoverImage = "/images/movie.jpg",
+                            CoverImage = "/images/movie4.jpg",
                             IsDeleted = false,
                             MovieType = 0,
-                            ReleaseDate = new DateTime(2004, 4, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 4",
-                            Title = "Movie 4"
+                            ReleaseDate = new DateTime(1994, 10, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "Multiple stories collide.",
+                            Title = "Pulp Fiction"
                         },
                         new
                         {
                             MovieId = 5,
                             AverageRating = 3.0,
-                            CoverImage = "/images/movie.jpg",
+                            CoverImage = "/images/movie5.jpg",
                             IsDeleted = false,
                             MovieType = 0,
-                            ReleaseDate = new DateTime(2005, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 5",
-                            Title = "Movie 5"
+                            ReleaseDate = new DateTime(1999, 10, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "First rule: don't talk about it.",
+                            Title = "Fight Club"
                         },
                         new
                         {
                             MovieId = 6,
                             AverageRating = 4.7000000000000002,
-                            CoverImage = "/images/movie.jpg",
+                            CoverImage = "/images/movie6.jpg",
                             IsDeleted = false,
                             MovieType = 0,
-                            ReleaseDate = new DateTime(2006, 6, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 6",
-                            Title = "Movie 6"
+                            ReleaseDate = new DateTime(2010, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "Dream within a dream.",
+                            Title = "Inception"
                         },
                         new
                         {
                             MovieId = 7,
                             AverageRating = 3.2000000000000002,
-                            CoverImage = "/images/movie.jpg",
+                            CoverImage = "/images/movie7.jpg",
                             IsDeleted = false,
                             MovieType = 0,
-                            ReleaseDate = new DateTime(2007, 7, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 7",
-                            Title = "Movie 7"
+                            ReleaseDate = new DateTime(1994, 7, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "Life is like a box of chocolates.",
+                            Title = "Forrest Gump"
                         },
                         new
                         {
                             MovieId = 8,
                             AverageRating = 3.7999999999999998,
-                            CoverImage = "/images/movie.jpg",
+                            CoverImage = "/images/movie8.jpg",
                             IsDeleted = false,
                             MovieType = 0,
-                            ReleaseDate = new DateTime(2008, 8, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 8",
-                            Title = "Movie 8"
+                            ReleaseDate = new DateTime(1999, 3, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "What is the Matrix?",
+                            Title = "The Matrix"
                         },
                         new
                         {
                             MovieId = 9,
                             AverageRating = 4.2999999999999998,
-                            CoverImage = "/images/movie.jpg",
+                            CoverImage = "/images/movie9.jpg",
                             IsDeleted = false,
                             MovieType = 0,
-                            ReleaseDate = new DateTime(2009, 9, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 9",
-                            Title = "Movie 9"
+                            ReleaseDate = new DateTime(2014, 11, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "Love transcends time and space.",
+                            Title = "Interstellar"
                         },
                         new
                         {
                             MovieId = 10,
                             AverageRating = 4.0999999999999996,
-                            CoverImage = "/images/movie.jpg",
+                            CoverImage = "/images/movie10.jpg",
                             IsDeleted = false,
                             MovieType = 0,
-                            ReleaseDate = new DateTime(2010, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 10",
-                            Title = "Movie 10"
+                            ReleaseDate = new DateTime(2000, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "Are you not entertained?",
+                            Title = "Gladiator"
                         },
                         new
                         {
                             MovieId = 11,
                             AverageRating = 3.7000000000000002,
-                            CoverImage = "/images/movie.jpg",
+                            CoverImage = "/images/movie11.jpg",
                             IsDeleted = false,
                             MovieType = 0,
-                            ReleaseDate = new DateTime(2011, 11, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 11",
-                            Title = "Movie 11"
+                            ReleaseDate = new DateTime(2006, 10, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "Every magic trick has a cost.",
+                            Title = "The Prestige"
                         },
                         new
                         {
                             MovieId = 12,
                             AverageRating = 3.8999999999999999,
-                            CoverImage = "/images/movie.jpg",
+                            CoverImage = "/images/movie12.jpg",
                             IsDeleted = false,
                             MovieType = 0,
-                            ReleaseDate = new DateTime(2012, 12, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 12",
-                            Title = "Movie 12"
+                            ReleaseDate = new DateTime(2006, 10, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "Cops and moles collide.",
+                            Title = "The Departed"
                         },
                         new
                         {
                             MovieId = 13,
                             AverageRating = 4.2000000000000002,
-                            CoverImage = "/images/movie.jpg",
+                            CoverImage = "/images/movie13.jpg",
                             IsDeleted = false,
                             MovieType = 0,
-                            ReleaseDate = new DateTime(2013, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 13",
-                            Title = "Movie 13"
+                            ReleaseDate = new DateTime(2014, 10, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "Not quite my tempo.",
+                            Title = "Whiplash"
                         },
                         new
                         {
                             MovieId = 14,
                             AverageRating = 2.8999999999999999,
-                            CoverImage = "/images/movie.jpg",
+                            CoverImage = "/images/movie14.jpg",
                             IsDeleted = false,
                             MovieType = 0,
-                            ReleaseDate = new DateTime(2014, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 14",
-                            Title = "Movie 14"
+                            ReleaseDate = new DateTime(2019, 10, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "Put on a happy face.",
+                            Title = "Joker"
                         },
                         new
                         {
                             MovieId = 15,
                             AverageRating = 3.6000000000000001,
-                            CoverImage = "/images/movie.jpg",
+                            CoverImage = "/images/movie15.jpg",
                             IsDeleted = false,
                             MovieType = 0,
-                            ReleaseDate = new DateTime(2015, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 15",
-                            Title = "Movie 15"
+                            ReleaseDate = new DateTime(2012, 12, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "Life, liberty, and revenge.",
+                            Title = "Django Unchained"
                         },
                         new
                         {
                             MovieId = 16,
                             AverageRating = 4.0,
-                            CoverImage = "/images/tvshow.jpg",
+                            CoverImage = "/images/tvshow1.jpg",
                             IsDeleted = false,
                             MovieType = 1,
-                            ReleaseDate = new DateTime(2016, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 1",
-                            Title = "TV Show 1"
+                            ReleaseDate = new DateTime(2008, 1, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "Say my name.",
+                            Title = "Breaking Bad"
                         },
                         new
                         {
                             MovieId = 17,
                             AverageRating = 3.2999999999999998,
-                            CoverImage = "/images/tvshow.jpg",
+                            CoverImage = "/images/tvshow2.jpg",
                             IsDeleted = false,
                             MovieType = 1,
-                            ReleaseDate = new DateTime(2017, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 2",
-                            Title = "TV Show 2"
+                            ReleaseDate = new DateTime(2016, 7, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "Upside Down awaits.",
+                            Title = "Stranger Things"
                         },
                         new
                         {
                             MovieId = 18,
                             AverageRating = 4.5,
-                            CoverImage = "/images/tvshow.jpg",
+                            CoverImage = "/images/tvshow3.jpg",
                             IsDeleted = false,
                             MovieType = 1,
-                            ReleaseDate = new DateTime(2018, 6, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 3",
-                            Title = "TV Show 3"
+                            ReleaseDate = new DateTime(2011, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "Winter is coming.",
+                            Title = "Game of Thrones"
                         },
                         new
                         {
                             MovieId = 19,
                             AverageRating = 3.6000000000000001,
-                            CoverImage = "/images/tvshow.jpg",
+                            CoverImage = "/images/tvshow4.jpg",
                             IsDeleted = false,
                             MovieType = 1,
-                            ReleaseDate = new DateTime(2019, 7, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 4",
-                            Title = "TV Show 4"
+                            ReleaseDate = new DateTime(2005, 3, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "World's best boss.",
+                            Title = "The Office"
                         },
                         new
                         {
                             MovieId = 20,
                             AverageRating = 3.7000000000000002,
-                            CoverImage = "/images/tvshow.jpg",
+                            CoverImage = "/images/tvshow5.jpg",
                             IsDeleted = false,
                             MovieType = 1,
-                            ReleaseDate = new DateTime(2020, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 5",
-                            Title = "TV Show 5"
+                            ReleaseDate = new DateTime(1994, 9, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "I'll be there for you.",
+                            Title = "Friends"
                         },
                         new
                         {
                             MovieId = 21,
                             AverageRating = 4.7999999999999998,
-                            CoverImage = "/images/tvshow.jpg",
+                            CoverImage = "/images/tvshow6.jpg",
                             IsDeleted = false,
                             MovieType = 1,
-                            ReleaseDate = new DateTime(2021, 9, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 6",
-                            Title = "TV Show 6"
+                            ReleaseDate = new DateTime(2016, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "Inside royal life.",
+                            Title = "The Crown"
                         },
                         new
                         {
                             MovieId = 22,
                             AverageRating = 4.0,
-                            CoverImage = "/images/tvshow.jpg",
+                            CoverImage = "/images/tvshow7.jpg",
                             IsDeleted = false,
                             MovieType = 1,
-                            ReleaseDate = new DateTime(2022, 10, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 7",
-                            Title = "TV Show 7"
+                            ReleaseDate = new DateTime(2019, 11, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "This is the way.",
+                            Title = "The Mandalorian"
                         },
                         new
                         {
                             MovieId = 23,
                             AverageRating = 3.8999999999999999,
-                            CoverImage = "/images/tvshow.jpg",
+                            CoverImage = "/images/tvshow8.jpg",
                             IsDeleted = false,
                             MovieType = 1,
-                            ReleaseDate = new DateTime(2023, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 8",
-                            Title = "TV Show 8"
+                            ReleaseDate = new DateTime(2019, 12, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "Toss a coin to your Witcher.",
+                            Title = "The Witcher"
                         },
                         new
                         {
                             MovieId = 24,
                             AverageRating = 4.4000000000000004,
-                            CoverImage = "/images/tvshow.jpg",
+                            CoverImage = "/images/tvshow9.jpg",
                             IsDeleted = false,
                             MovieType = 1,
-                            ReleaseDate = new DateTime(2024, 12, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 9",
-                            Title = "TV Show 9"
+                            ReleaseDate = new DateTime(2013, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "By order of the Peaky Blinders.",
+                            Title = "Peaky Blinders"
                         },
                         new
                         {
                             MovieId = 25,
                             AverageRating = 3.7999999999999998,
-                            CoverImage = "/images/tvshow.jpg",
+                            CoverImage = "/images/tvshow10.jpg",
                             IsDeleted = false,
                             MovieType = 1,
-                            ReleaseDate = new DateTime(2025, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 10",
-                            Title = "TV Show 10"
+                            ReleaseDate = new DateTime(2019, 7, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "Superheroes gone bad.",
+                            Title = "The Boys"
                         },
                         new
                         {
                             MovieId = 26,
                             AverageRating = 3.7000000000000002,
-                            CoverImage = "/images/tvshow.jpg",
+                            CoverImage = "/images/tvshow11.jpg",
                             IsDeleted = false,
                             MovieType = 1,
-                            ReleaseDate = new DateTime(2026, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 11",
-                            Title = "TV Show 11"
+                            ReleaseDate = new DateTime(2020, 10, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "Chess prodigy rises.",
+                            Title = "The Queen's Gambit"
                         },
                         new
                         {
                             MovieId = 27,
                             AverageRating = 4.2999999999999998,
-                            CoverImage = "/images/tvshow.jpg",
+                            CoverImage = "/images/tvshow12.jpg",
                             IsDeleted = false,
                             MovieType = 1,
-                            ReleaseDate = new DateTime(2027, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 12",
-                            Title = "TV Show 12"
+                            ReleaseDate = new DateTime(2023, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "Survive and protect.",
+                            Title = "The Last of Us"
                         },
                         new
                         {
                             MovieId = 28,
                             AverageRating = 3.5,
-                            CoverImage = "/images/tvshow.jpg",
+                            CoverImage = "/images/tvshow13.jpg",
                             IsDeleted = false,
                             MovieType = 1,
-                            ReleaseDate = new DateTime(2028, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 13",
-                            Title = "TV Show 13"
+                            ReleaseDate = new DateTime(2015, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "Legal trouble ahead.",
+                            Title = "Better Call Saul"
                         },
                         new
                         {
                             MovieId = 29,
                             AverageRating = 4.0999999999999996,
-                            CoverImage = "/images/tvshow.jpg",
+                            CoverImage = "/images/tvshow14.jpg",
                             IsDeleted = false,
                             MovieType = 1,
-                            ReleaseDate = new DateTime(2029, 5, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 14",
-                            Title = "TV Show 14"
+                            ReleaseDate = new DateTime(2022, 8, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "Fire and blood.",
+                            Title = "House of the Dragon"
                         },
                         new
                         {
                             MovieId = 30,
                             AverageRating = 3.8999999999999999,
-                            CoverImage = "/images/tvshow.jpg",
+                            CoverImage = "/images/tvshow15.jpg",
                             IsDeleted = false,
                             MovieType = 1,
-                            ReleaseDate = new DateTime(2030, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ShortDescription = "Description 15",
-                            Title = "TV Show 15"
+                            ReleaseDate = new DateTime(2021, 6, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ShortDescription = "God of Mischief returns.",
+                            Title = "Loki"
                         });
                 });
 

@@ -37,9 +37,9 @@ builder.Services.AddSwaggerGen(c =>
     } });
 
 });
-Env.Load("../.env");
-var connectionString = Environment.GetEnvironmentVariable("DATABASE_CONNECTION_STRING");
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<MovieRatingDBContext>(options => options.UseSqlServer(connectionString));
+
 
 builder.Services.AddMapster();
 
@@ -60,16 +60,16 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseCors();
+
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAuthorization();
-
 app.MapControllers();
+
 using (var scope = app.Services.CreateScope())
 {
     var dataContext = scope.ServiceProvider.GetRequiredService<MovieRatingDBContext>();

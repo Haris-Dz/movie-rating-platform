@@ -21,19 +21,28 @@ namespace movie_rating_platform.Services
         }
         public override IQueryable<Movie> AddFilter(MovieSearchRequest searchObject, IQueryable<Movie> query)
         {
-            if (!string.IsNullOrWhiteSpace(searchObject.SearchKeyWord))
+            if (!string.IsNullOrWhiteSpace(searchObject.SearchKeyWord) && searchObject.SearchKeyWord.Length >= 2)
             {
-                query = query.Where(x => x.Title.ToLower().Contains(searchObject.SearchKeyWord));
+                var filterExpression = MovieSearchFilterHelper.GetFilter(searchObject.SearchKeyWord);
+
+                if (query.Any(filterExpression))
+                {
+                    query = query.Where(filterExpression);
+                }
             }
 
             if (searchObject.MovieTypeSearch.HasValue)
             {
-                query = query.Where(x=>x.MovieType == searchObject.MovieTypeSearch);
+                query = query.Where(x => x.MovieType == searchObject.MovieTypeSearch);
             }
+
             query = query.Where(x => !x.IsDeleted);
             query = query.Include(x => x.MovieActors).ThenInclude(ma => ma.Actor).Include(x => x.MovieRatings);
+
             return query;
         }
+
+
         public override void BeforeInsert(MovieInsertRequest request, Movie entity)
         {
             entity.AverageRating = 1;

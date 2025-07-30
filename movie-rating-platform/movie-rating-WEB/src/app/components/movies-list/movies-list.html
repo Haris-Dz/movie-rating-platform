@@ -1,7 +1,12 @@
 <div class="top-bar">
   <toggle-type (toggleChange)="onToggleChange($event)"></toggle-type>
   <search-bar (search)="onSearch($event)"></search-bar>
-
+</div>
+<div *ngIf="successMessage" class="success-message">
+  {{ successMessage }}
+</div>
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
 </div>
 
 <div *ngIf="!loading" class="movies-grid">
@@ -31,16 +36,18 @@
             />
           </svg>
         </span>
-        <p class="rating-number">{{ movie.averageRating }}</p>
+        <p class="rating-number">{{ movie.averageRating | number:'1.1-1' }}</p>
+
       </div>
     </div>
 
     <div class="movie-content">
       <img
-        [src]="'http://localhost:5127' + movie.coverImage"
+        [src]="baseUrl + movie.coverImage"
         alt="{{ movie.title }}"
         class="movie-image"
       />
+
       <div class="movie-cast">
         <strong>Cast:</strong>
         <span *ngFor="let actor of movie.actors; let last = last">
@@ -50,7 +57,9 @@
 
       <div class="movie-text">
         <p class="movie-description">{{ movie.shortDescription }}</p>
-        <button class="leave-rating-btn">Leave Rating</button>
+        <button class="leave-rating-btn" (click)="openRatingDialog(movie)">
+          Leave Rating
+        </button>
       </div>
     </div>
   </div>
@@ -61,4 +70,10 @@
   <button class="show-more" *ngIf="movies.length < totalCount" (click)="showMore()">Show More</button>
 </div>
 
+<app-rating-dialog
+  [visible]="showRatingDialog"
+  [movieTitle]="selectedMovie?.title || ''"
+  (confirmed)="submitRating($event)"
+  (cancelled)="cancelRating()"
+></app-rating-dialog>
 
