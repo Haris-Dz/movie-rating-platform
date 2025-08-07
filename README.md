@@ -11,6 +11,19 @@ Minimalist movie and TV show rating platform built with ASP.NET Core and Angular
 ## Pokretanje aplikacije
 - **Nakon builda, aplikaciji pristupiti na: http://localhost:4200**
 
+## Bugfixes & Updates
+##  Search Fixes
+- **Ispravljeno: Pretraga sada ispravno vraća praznu listu ako nijedan film/TV show ne odgovara unesenoj riječi (ranije su se prikazivali svi itemi).**
+- **Ispravljeno: `4 stars` i `at least 4 stars` u smart searchu sada vraćaju različite rezultate, kako je i očekivano.**
+
+## Basic Authentication UI
+- **Dodan ekran za login s `Login` dugmetom.**
+- **Hardkodiran demo korisnik:**  
+  **Username:** `demo`  
+  **Password:** `password123`
+- **Nakon uspješne autentifikacije, korisnik ima pristup autoriziranom API endpointu `/actor` koji prikazuje listu glumaca.**
+- **Ako korisnik nije autentifikovan, API vraća `401 Unauthorized`.**
+- **GET Api-s za Movies/TvShows, kao i POST za rating su whitelisted, mogu se koristiti bez autorizacije.**
 
 # Korištene tehnologije
 - **ASP.NET Core 8 – za izradu REST API-ja**
