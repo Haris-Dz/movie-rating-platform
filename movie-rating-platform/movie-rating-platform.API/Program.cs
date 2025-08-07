@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Authentication;
+﻿using Microsoft.AspNetCore.Authentication;
 using Mapster;
 using DotNetEnv;
 using Microsoft.EntityFrameworkCore;
@@ -40,7 +40,9 @@ builder.Services.AddSwaggerGen(c =>
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<MovieRatingDBContext>(options => options.UseSqlServer(connectionString));
 
-
+//Env.Load("../.env");
+//var connectionString = Environment.GetEnvironmentVariable("DATABASE_CONNECTION_STRING");
+//builder.Services.AddDbContext<MovieRatingDBContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddMapster();
 
 builder.Services.AddAuthentication("BasicAuthentication")
@@ -52,7 +54,9 @@ builder.Services.AddCors(options =>
     {
         policy.WithOrigins("http://localhost:4200")
               .AllowAnyHeader()
-              .AllowAnyMethod();
+              .AllowAnyMethod()
+              .WithExposedHeaders("Authorization");
+
     });
 });
 var app = builder.Build();
@@ -67,6 +71,7 @@ if (app.Environment.IsDevelopment())
 app.UseCors();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 

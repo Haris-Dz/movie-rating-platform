@@ -10,22 +10,23 @@ public static class MovieSearchFilterHelper
     public static Expression<Func<Movie, bool>> GetFilter(string keyword)
     {
         if (string.IsNullOrWhiteSpace(keyword))
+            keyword = "";
 
         keyword = keyword.ToLowerInvariant().Trim();
 
-        var filters = new List<Expression<Func<Movie, bool>>>();
         var atLeastStars = Regex.Match(keyword, @"at\s+least\s+(\d+)\s+stars?");
         if (atLeastStars.Success && int.TryParse(atLeastStars.Groups[1].Value, out int minStars))
         {
-            filters.Add(m => m.AverageRating >= minStars);
+            return m => m.AverageRating >= minStars;
         }
 
         var exactStars = Regex.Match(keyword, @"^(\d+)\s+stars?$");
         if (exactStars.Success && int.TryParse(exactStars.Groups[1].Value, out int exactStarValue))
         {
-            filters.Add(m => m.AverageRating.HasValue && Math.Floor(m.AverageRating.Value) == exactStarValue);
-
+            return m => m.AverageRating.HasValue && Math.Floor(m.AverageRating.Value) == exactStarValue;
         }
+
+        var filters = new List<Expression<Func<Movie, bool>>>();
 
         var beforeYear = Regex.Match(keyword, @"before\s+(\d{4})");
         if (beforeYear.Success && int.TryParse(beforeYear.Groups[1].Value, out int beforeYearVal))
@@ -65,7 +66,6 @@ public static class MovieSearchFilterHelper
                 )
             );
         }
-
 
         var finalFilter = filters[0];
         for (int i = 1; i < filters.Count; i++)

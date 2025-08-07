@@ -38,13 +38,21 @@ namespace movie_rating_platform.Services.BaseServices
             }
             else
             {
-                query = query.OrderBy(e => EF.Property<object>(e, "MovieId"));
+                var entityType = typeof(TDbEntity);
+                var defaultSortProperty = entityType.GetProperty("MovieId") ?? entityType.GetProperty("Id");
+
+                if (defaultSortProperty != null)
+                {
+                    query = query.OrderBy(e => EF.Property<object>(e, defaultSortProperty.Name));
+                }
             }
+
             if (search?.Page.HasValue == true && search?.PageSize.HasValue == true)
             {
                 int skip = (search.Page.Value - 1) * search.PageSize.Value;
                 query = query.Skip(skip).Take(search.PageSize.Value);
             }
+
             var list = query.ToList();
             result = Mapper.Map<List<TModel>>(list);
 
@@ -56,6 +64,7 @@ namespace movie_rating_platform.Services.BaseServices
 
             return pagedResult;
         }
+
 
         public virtual void CustomMapPagedResponse(List<TModel> result) { }
 
