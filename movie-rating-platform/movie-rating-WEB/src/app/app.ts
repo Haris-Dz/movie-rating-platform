@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 import { MoviesList } from './components/movies-list/movies-list';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterModule, RouterOutlet, FormsModule, HttpClientModule],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })

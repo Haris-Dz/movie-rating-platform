@@ -8,15 +8,16 @@ import { MovieRatingService } from '../../services/movie-rating.service';
 import { SearchBar } from '../search-bar/search-bar';
 import { ToggleType } from "../toggle-type/toggle-type";
 import { RatingDialog } from '../rating-dialog/rating-dialog';
-
+import { LoginComponent } from '../login/login';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
+import { ActorComponent } from '../actors-list/actors-list';
 
 @Component({
   selector: 'movies-list',
   standalone: true,
-  imports: [CommonModule, RouterModule, SearchBar, ToggleType, RatingDialog],
+  imports: [CommonModule, RouterModule, SearchBar, ToggleType, RatingDialog, LoginComponent, ActorComponent],
   templateUrl: './movies-list.html',
   styleUrls: ['./movies-list.css']
 })
@@ -30,6 +31,8 @@ export class MoviesList implements OnInit {
   pageSize = 10;
   successMessage: string | null = null;
   errorMessage: string | null = null;
+  showLogin = false;
+  showActorsAlert = false;
 
   searchQuery = '';
   private searchSubject = new Subject<string>();
@@ -79,38 +82,59 @@ export class MoviesList implements OnInit {
       }
     });
   }
+  toggleActorsAlert() {
+    this.showActorsAlert = !this.showActorsAlert;
+  }
+  get isLoggedIn(): boolean {
+    // Provjera demo login flag
+    return !!localStorage.getItem('username') && !!localStorage.getItem('password');
+  }
+  onActorsAlertClosed() {
+    this.showActorsAlert = false;
+  }
+  logout() {
+    localStorage.removeItem('username');
+    localStorage.removeItem('password');
+    this.successMessage = 'Logged out successfully.';
+    this.loadMovies();
+    setTimeout(() => this.successMessage = null, 3000);
+  }
 
   onSearch(query: string) {
     this.searchSubject.next(query);
   }
 
   onToggleChange(selectedType: number) {
-    console.log('Selected toggle:', selectedType);
     this.currentType = selectedType;
     this.currentPage = 1;
     this.pageSize = 10;
     this.loadMovies();
   }
 
+  onLoginClick() {
+    this.showLogin = true;
+  }
+
+  onLoginClose(success: boolean) {
+    this.showLogin = false;
+    if (success) {
+      this.successMessage = 'You are logged in!';
+      this.loadMovies();
+      setTimeout(() => this.successMessage = null, 3000);
+    }
+  }
+
   showMore() {
     if (this.searchQuery.length >= 2) return;
-    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     this.pageSize += 10;
     this.loadMovies();
-    setTimeout(() => {
-      window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
-    }, 55);
   }
 
   showLess() {
     if (this.searchQuery.length >= 2) return;
     if (this.pageSize > 10) {
-      const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
       this.pageSize -= 10;
       this.loadMovies();
-      setTimeout(() => {
-        window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
-      }, 55);
     }
   }
 
@@ -124,11 +148,7 @@ export class MoviesList implements OnInit {
 
   openRatingDialog(movie: Movie) {
     this.selectedMovie = movie;
-
-    if (this.ratingDialog) {
-      this.ratingDialog.reset();
-    }
-
+    if (this.ratingDialog) this.ratingDialog.reset();
     this.showRatingDialog = true;
   }
 
@@ -147,7 +167,6 @@ export class MoviesList implements OnInit {
         this.showRatingDialog = false;
         this.selectedMovie = null;
         this.loadMovies();
-
         setTimeout(() => this.successMessage = null, 3000);
       },
       error: (err) => {

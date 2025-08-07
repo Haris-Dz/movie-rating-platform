@@ -1,15 +1,25 @@
 <div class="top-bar">
   <toggle-type (toggleChange)="onToggleChange($event)"></toggle-type>
   <search-bar (search)="onSearch($event)"></search-bar>
-</div>
-<div *ngIf="successMessage" class="success-message">
-  {{ successMessage }}
-</div>
-<div *ngIf="errorMessage" class="error-message">
-  {{ errorMessage }}
+
+  <button (click)="toggleActorsAlert()">Actors</button>
+
+  <button *ngIf="!isLoggedIn" (click)="onLoginClick()">Login</button>
+  <button *ngIf="isLoggedIn" (click)="logout()">Logout</button>
+
+  <div *ngIf="showLogin" class="modal-overlay">
+    <app-login (close)="onLoginClose($event)"></app-login>
+  </div>
 </div>
 
-<div *ngIf="!loading" class="movies-grid">
+<app-actor *ngIf="showActorsAlert" (closed)="onActorsAlertClosed()"></app-actor>
+
+
+<div *ngIf="!loading && movies.length === 0" class="no-results">
+  No results found.
+</div>
+
+<div *ngIf="!loading && movies.length > 0" class="movies-grid">
   <div class="movie-card" *ngFor="let movie of movies; let mi = index">
     <div class="movie-header">
       <h3>{{ movie.title }} ({{ movie.releaseDate | date: 'yyyy' }})</h3>
@@ -37,7 +47,6 @@
           </svg>
         </span>
         <p class="rating-number">{{ movie.averageRating | number:'1.1-1' }}</p>
-
       </div>
     </div>
 
@@ -65,7 +74,7 @@
   </div>
 </div>
 
-<div class="pagination-controls" *ngIf="!loading">
+<div class="pagination-controls" *ngIf="!loading && movies.length > 0">
   <button class="show-less" *ngIf="pageSize > 10" (click)="showLess()">Show Less</button>
   <button class="show-more" *ngIf="movies.length < totalCount" (click)="showMore()">Show More</button>
 </div>
@@ -76,4 +85,3 @@
   (confirmed)="submitRating($event)"
   (cancelled)="cancelRating()"
 ></app-rating-dialog>
-

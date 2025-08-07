@@ -29,6 +29,10 @@ namespace movie_rating_platform.Services
                 {
                     query = query.Where(filterExpression);
                 }
+                else
+                {
+                    return query.Where(m => false);
+                }
             }
 
             if (searchObject.MovieTypeSearch.HasValue)
@@ -41,6 +45,8 @@ namespace movie_rating_platform.Services
 
             return query;
         }
+
+
 
 
         public override void BeforeInsert(MovieInsertRequest request, Movie entity)

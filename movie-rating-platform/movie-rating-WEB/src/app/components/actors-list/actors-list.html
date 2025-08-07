@@ -1,0 +1,17 @@
+<div *ngIf="loading" class="loading">Loading actors...</div>
+
+<div *ngIf="errorMessage" class="alert-box error-alert" role="alert" aria-live="assertive">
+  <p>{{ errorMessage }}</p>
+  <button class="close-btn" (click)="closeAlert()" aria-label="Close error alert">×</button>
+</div>
+
+<div *ngIf="!loading && !errorMessage && actors.length > 0" class="alert-box actors-alert" role="dialog" aria-modal="true" aria-labelledby="actorsListTitle">
+  <h3 id="actorsListTitle">Actors List</h3>
+  <ul>
+    <li *ngFor="let actor of actors">
+      {{ actor.firstName }} {{ actor.lastName }} ({{ actor.dateOfBirth | date:'yyyy-MM-dd' }})
+    </li>
+  </ul>
+  <button class="close-btn" (click)="closeAlert()" aria-label="Close actors list">Close</button>
+</div>
+
