@@ -1,40 +1,39 @@
 # movie-rating-platform
 Minimalist movie and TV show rating platform built with ASP.NET Core and Angular.
 
-# Upute za pokretanje
-- **Otvoriti repozitorij movie-rating-platform**
-- **Pronaći arhivu pod nazivom Env_file30072025**
-- **Extract .env file iz arhive u isti trenutni folder**
-- **.env file bi se trebao nalaziti u folderu movie-rating-platform\movie-rating-platform**
-- **Unutar movie-rating-platform\movie-rating-platform, otvoriti terminal i pokrenuti komandu `docker compose up --build` te sačekati da se svi servisi uspješno buildaju**
+# Setup Instructions
+- **Open the movie-rating-platform repository**
+- **Locate the archive named Env_file30072025**
+- **Extract the .env file from the archive into the same current folder**
+- **The .env file should be placed inside the movie-rating-platform\movie-rating-platform directory**
+- **Inside movie-rating-platform\movie-rating-platform, open a terminal and run the command docker compose up --build, then wait for all services to successfully build**
 
-## Pokretanje aplikacije
-- **Nakon builda, aplikaciji pristupiti na: http://localhost:4200**
+## Running the Application
+- **After the build is complete, access the application at: http://localhost:4200**
 
 ## Bugfixes & Updates
 ##  Search Fixes
-- **Ispravljeno: Pretraga sada ispravno vraća praznu listu ako nijedan film/TV show ne odgovara unesenoj riječi (ranije su se prikazivali svi itemi).**
-- **Ispravljeno: `4 stars` i `at least 4 stars` u smart searchu sada vraćaju različite rezultate, kako je i očekivano.**
+- **Fixed: Search now correctly returns an empty list when no movie/TV show matches the entered query (previously all items were displayed).**
+- **Fixed: 4 stars and at least 4 stars in smart search now return different results, as expected.**
 
-## Basic Authentication UI
-- **Dodan ekran za login s `Login` dugmetom.**
-- **Hardkodiran demo korisnik:**  
+## Added a login screen with a Login button.
+- **Hardcoded demo user credentials:**  
   **Username:** `demo`  
   **Password:** `password123`
-- **Nakon uspješne autentifikacije, korisnik ima pristup autoriziranom API endpointu `/actor` koji prikazuje listu glumaca.**
-- **Ako korisnik nije autentifikovan, API vraća `401 Unauthorized`.**
-- **GET Api-s za Movies/TvShows, kao i POST za rating su whitelisted, mogu se koristiti bez autorizacije.**
+- **After successful authentication, the user gains access to the authorized API endpoint /actor, which returns a list of actors.**
+- **If the user is not authenticated, the API returns `401 Unauthorized`.**
+- **GET APIs for Movies/TV Shows, as well as POST for rating submissions, are whitelisted and can be accessed without authentication.**
 
-# Korištene tehnologije
-- **ASP.NET Core 8 – za izradu REST API-ja**
-- **Entity Framework Core – za pristup bazi podataka**
-- **SQL Server – kao sistem za upravljanje bazom podataka**
-- **Angular – za razvoj web aplikacije**
+# Technologies Used
+- **ASP.NET Core 8 – for building the REST API**
+- **Entity Framework Core – for database access**
+- **SQL Server – as the database management system**
+- **Angular – for developing the web application**
 
 # Deployment i Hosting
 - **Docker**
-- **.env konfiguracija – za parametre baze, porta i sigurnosnih podataka**
-- **SQL Server – kao sistem za upravljanje bazom podataka**
-- **NGINX – koristi se kao web server za hosting Angular aplikacije u produkcijskom okruženju**
+- **.env konfiguracija – for database parameters, ports, and security-related settings**
+- **SQL Server – as the database management system**
+- **NGINX – used as a web server for hosting the Angular application in a production environment**
 
 
